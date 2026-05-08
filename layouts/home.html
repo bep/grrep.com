@@ -1,0 +1,68 @@
+{{ define "main" }}
+{{- $repo := site.Params.repoURL | default "https://github.com/bep/grrep" -}}
+<main class="page">
+	<article class="doc">
+		<header class="doc-head">
+			<h1 class="wordmark">grrep</h1>
+			<p class="meta">
+				<span>Apache-2.0</span>
+				<span class="dot" aria-hidden="true">·</span>
+				<span>Go 1.25</span>
+			</p>
+		</header>
+
+		<p class="lede">A small and fast recursive grep written in Go.</p>
+
+		<p class="prose">
+			Honors <code>.gitignore</code>. Skips the block managed by
+			<a href="https://github.com/bep/gitjoin">gitjoin</a>, so repositories
+			joined into a virtual monorepo stay searchable as one tree.
+		</p>
+
+		<section class="block" aria-labelledby="install">
+			<h2 id="install" class="rule"><span>install</span></h2>
+			<div class="cmd">
+				<pre><code id="install-cmd">go install github.com/bep/grrep@latest</code></pre>
+				<button class="copy" type="button" data-target="install-cmd" aria-label="Copy install command">copy</button>
+			</div>
+		</section>
+
+		<section class="block" aria-labelledby="search">
+			<h2 id="search" class="rule"><span>search</span></h2>
+			<pre class="terminal" aria-label="Example grrep session"><span class="prompt">$</span> <span class="input">grrep 'BA[RZ]'</span>
+<span class="path">./words.txt</span><span class="sep">:</span><span class="line">1</span><span class="sep">:</span><span class="match">BAZ</span>
+<span class="path">./words.txt</span><span class="sep">:</span><span class="line">3</span><span class="sep">:</span><span class="match">BAR</span>
+<span class="path">./more/words.txt</span><span class="sep">:</span><span class="line">1</span><span class="sep">:</span><span class="match">BAR</span></pre>
+		</section>
+
+		<section class="block" aria-labelledby="fast">
+			<h2 id="fast" class="rule"><span>fast</span></h2>
+			<p class="prose">
+				Linux kernel · 118 000 files · pattern <code>[A-Z]+_SUSPEND</code>
+				as a whole word · median of seven runs.
+			</p>
+			<table class="bench">
+				<tbody>
+					<tr><th scope="row">ugrep</th><td>1.184<span class="unit">s</span></td></tr>
+					<tr class="self"><th scope="row">grrep</th><td>1.664<span class="unit">s</span></td></tr>
+					<tr><th scope="row">ripgrep</th><td>3.467<span class="unit">s</span></td></tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section class="block" aria-labelledby="source">
+			<h2 id="source" class="rule"><span>source</span></h2>
+			<p>
+				<a class="repo-link" href="{{ $repo }}" rel="noopener">
+					<span class="arrow" aria-hidden="true">→</span>
+					<span class="url">github.com/bep/grrep</span>
+				</a>
+			</p>
+		</section>
+	</article>
+
+	<section class="sr-only" aria-label="{{ .Title }}">
+		{{ .Content }}
+	</section>
+</main>
+{{ end }}

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1200, initial-scale=1" />
+<title>grrep — OG card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+	--hue: 30;
+	--bg:        oklch(98% 0.005 var(--hue));
+	--surface:   oklch(96% 0.010 var(--hue));
+	--rule:      oklch(78% 0.020 var(--hue));
+	--rule-soft: oklch(85% 0.014 var(--hue));
+	--fg:        oklch(22% 0.020 var(--hue));
+	--fg-mute:   oklch(42% 0.018 var(--hue));
+	--fg-dim:    oklch(58% 0.014 var(--hue));
+	--accent:    oklch(50% 0.150 var(--hue));
+	--font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: 1200px; height: 630px; overflow: hidden; }
+
+body {
+	background: var(--bg);
+	color: var(--fg);
+	font-family: var(--font-sans);
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	padding: 88px 96px 72px;
+	gap: 40px;
+}
+
+.card {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 36px;
+	align-content: start;
+}
+
+.head {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: end;
+	gap: 32px;
+	border-bottom: 1px solid var(--rule-soft);
+	padding-bottom: 28px;
+}
+
+.wordmark {
+	font-family: var(--font-sans);
+	font-weight: 700;
+	font-size: 184px;
+	line-height: 0.85;
+	letter-spacing: -0.05em;
+	color: var(--fg);
+}
+
+.tag {
+	display: flex;
+	gap: 14px;
+	font-family: var(--font-mono);
+	font-size: 22px;
+	color: var(--fg-dim);
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+	padding-bottom: 22px;
+}
+
+.tag .sep { opacity: 0.5; }
+
+.lede {
+	font-size: 56px;
+	line-height: 1.05;
+	letter-spacing: -0.025em;
+	font-weight: 500;
+	color: var(--fg);
+	max-width: 22ch;
+}
+
+.foot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 32px;
+	font-family: var(--font-mono);
+	font-size: 24px;
+}
+
+.cmd {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	padding: 18px 24px;
+	border: 1px solid var(--rule-soft);
+	background: var(--surface);
+	color: var(--fg);
+}
+
+.cmd .prompt { color: var(--fg-dim); }
+
+.host { color: var(--accent); display: inline-flex; align-items: baseline; gap: 14px; }
+</style>
+</head>
+<body>
+	<div class="card">
+		<header class="head">
+			<h1 class="wordmark">grrep</h1>
+			<div class="tag">
+				<span>Apache-2.0</span>
+				<span class="sep">·</span>
+				<span>Go 1.25</span>
+				<span class="sep">·</span>
+				<span>github.com/bep/grrep</span>
+			</div>
+		</header>
+		<p class="lede">A small and fast recursive grep written in Go.</p>
+	</div>
+
+	<div class="foot">
+		<div class="cmd">
+			<span class="prompt">$</span>
+			<span>go install github.com/bep/grrep@latest</span>
+		</div>
+		<div class="host"><span>→</span><span>grrep.com</span></div>
+	</div>
+</body>
+</html>

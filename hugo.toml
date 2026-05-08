@@ -1,0 +1,62 @@
+baseURL = "https://grrep.com/"
+title   = "grrep: A small and fast recursive grep written in Go."
+
+_merge = "deep"
+
+[params]
+  name                = "grrep"
+  description         = "A small, fast recursive grep written in Go. Honors .gitignore but skips the block managed by gitjoin, so virtual monorepos stay searchable as one tree."
+  repoURL             = "https://github.com/bep/grrep"
+  author              = "Bjørn Erik Pedersen"
+  authorURL           = "https://github.com/bep"
+  authorHandle        = "bep"
+  licenseURL          = "https://www.apache.org/licenses/LICENSE-2.0"
+  programmingLanguage = "Go"
+  fontsHref           = "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+  keywords = [
+    "grep",
+    "recursive grep",
+    "ripgrep alternative",
+    "gitjoin",
+    "virtual monorepo",
+    "gitignore",
+    "go grep",
+    "command-line search",
+  ]
+
+[params.themeColor]
+  light = "#fbf8f3"
+  dark  = "#191412"
+
+# Design tokens. Top-level keys are the default palette (light, for grrep);
+# the [params.vars.dark] block overrides for prefers-color-scheme: dark.
+# Consumed via @import "hugo:vars" / @import "hugo:vars/dark" in main.css.
+[params.vars]
+  bg        = "oklch(98% 0.005 30)"
+  surface   = "oklch(96% 0.010 30)"
+  rule      = "oklch(78% 0.020 30)"
+  rule-soft = "oklch(88% 0.012 30)"
+  fg        = "oklch(22% 0.020 30)"
+  fg-mute   = "oklch(42% 0.018 30)"
+  fg-dim    = "oklch(58% 0.014 30)"
+  accent    = "oklch(50% 0.150 30)"
+  match-bg  = "oklch(94% 0.045 30)"
+  match-fg  = "oklch(32% 0.150 30)"
+  font-sans = '"Hanken Grotesk", ui-sans-serif, system-ui, sans-serif'
+  font-mono = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace'
+
+[params.vars.dark]
+  bg        = "oklch(15% 0.012 30)"
+  surface   = "oklch(20% 0.014 30)"
+  rule      = "oklch(38% 0.014 30)"
+  rule-soft = "oklch(28% 0.012 30)"
+  fg        = "oklch(92% 0.014 30)"
+  fg-mute   = "oklch(72% 0.014 30)"
+  fg-dim    = "oklch(55% 0.014 30)"
+  accent    = "oklch(75% 0.130 30)"
+  match-bg  = "oklch(28% 0.080 30)"
+  match-fg  = "oklch(88% 0.090 30)"
+
+[module]
+  [[module.imports]]
+    path = "github.com/bep/gitjoin.com"
