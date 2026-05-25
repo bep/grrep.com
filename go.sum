@@ -6,3 +6,5 @@ github.com/bep/gitjoin.com v0.0.0-20260508181641-73d057ba27ce h1:pJwlDxObDs+szvc
 github.com/bep/gitjoin.com v0.0.0-20260508181641-73d057ba27ce/go.mod h1:/Yt5UNSPSjTmK9OlcGyzJL5grJu3ov+C8OE2uu/b1Zk=
 github.com/bep/gitjoin.com v0.0.0-20260513091421-ed00427e2d79 h1:TvmbHUsTCTjDKWdyIlUIfuMbYUpCXkDaXKYkgGcL8c4=
 github.com/bep/gitjoin.com v0.0.0-20260513091421-ed00427e2d79/go.mod h1:/Yt5UNSPSjTmK9OlcGyzJL5grJu3ov+C8OE2uu/b1Zk=
+github.com/bep/gitjoin.com v0.0.0-20260525154453-0b7004aa130b h1:DGQ3HRrivbggtWsZJGw5ePilnUVDJmmrFlR8Ed7S95I=
+github.com/bep/gitjoin.com v0.0.0-20260525154453-0b7004aa130b/go.mod h1:/Yt5UNSPSjTmK9OlcGyzJL5grJu3ov+C8OE2uu/b1Zk=
