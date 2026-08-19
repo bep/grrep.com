@@ -22,17 +22,38 @@
 		<section class="block" aria-labelledby="install">
 			<h2 id="install" class="rule"><span>install</span></h2>
 			<div class="cmd">
-				<pre><code id="install-cmd">go install github.com/bep/grrep@latest</code></pre>
+				<pre tabindex="0" aria-label="Install command"><code id="install-cmd">go install github.com/bep/grrep@latest</code></pre>
 				<button class="copy" type="button" data-target="install-cmd" aria-label="Copy install command">copy</button>
 			</div>
 		</section>
 
 		<section class="block" aria-labelledby="search">
 			<h2 id="search" class="rule"><span>search</span></h2>
-			<pre class="terminal" aria-label="Example grrep session"><span class="prompt">$</span> <span class="input">grrep 'BA[RZ]'</span>
+			{{/* gotmplfmt-ignore-start */}}
+			<pre class="terminal" tabindex="0" aria-label="Example grrep session"><span class="prompt">$</span> <span class="input">grrep 'BA[RZ]'</span>
 <span class="path">./words.txt</span><span class="sep">:</span><span class="line">1</span><span class="sep">:</span><span class="match">BAZ</span>
 <span class="path">./words.txt</span><span class="sep">:</span><span class="line">3</span><span class="sep">:</span><span class="match">BAR</span>
 <span class="path">./more/words.txt</span><span class="sep">:</span><span class="line">1</span><span class="sep">:</span><span class="match">BAR</span></pre>
+			{{/* gotmplfmt-ignore-end */}}
+		</section>
+
+		<section class="block" aria-labelledby="flags">
+			<h2 id="flags" class="rule"><span>flags</span></h2>
+			<table class="flags">
+				<tbody>
+					<tr><th scope="row">-F</th><td>literal match, no regex</td></tr>
+					<tr><th scope="row">-i</th><td>case-insensitive</td></tr>
+					<tr><th scope="row">-w</th><td>match whole words</td></tr>
+					<tr><th scope="row">-v</th><td>invert: lines that do not match</td></tr>
+					<tr><th scope="row">--max-depth=N</th><td>limit directory depth</td></tr>
+					<tr><th scope="row">-q</th><td>quiet; exit status only</td></tr>
+				</tbody>
+			</table>
+			<p class="prose">
+				Regex by default. Hidden files, binaries, and anything in
+				<code>.gitignore</code> or <code>.ignore</code> are skipped —
+				except the gitjoin-managed block.
+			</p>
 		</section>
 
 		<section class="block" aria-labelledby="fast">
@@ -60,9 +81,5 @@
 			</p>
 		</section>
 	</article>
-
-	<section class="sr-only" aria-label="{{ .Title }}">
-		{{ .Content }}
-	</section>
 </main>
 {{ end }}
