@@ -12,7 +12,7 @@ _merge = "deep"
   authorHandle        = "bep"
   licenseURL          = "https://www.apache.org/licenses/LICENSE-2.0"
   programmingLanguage = "Go"
-  fontsHref           = "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+  fontsHref           = "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap"
   keywords = [
     "grep",
     "recursive grep",
@@ -31,6 +31,8 @@ _merge = "deep"
 # Design tokens. Top-level keys are the default palette (light, for grrep);
 # the [params.vars.dark] block overrides for prefers-color-scheme: dark.
 # Consumed via @import "hugo:vars" / @import "hugo:vars/dark" in main.css.
+# The same palette is restated as hex in static/favicon.svg,
+# [params.themeColor] above, and scripts/og-card.html — keep them in sync.
 [params.vars]
   bg        = "oklch(98% 0.005 30)"
   surface   = "oklch(96% 0.010 30)"
@@ -38,7 +40,7 @@ _merge = "deep"
   rule-soft = "oklch(88% 0.012 30)"
   fg        = "oklch(22% 0.020 30)"
   fg-mute   = "oklch(42% 0.018 30)"
-  fg-dim    = "oklch(58% 0.014 30)"
+  fg-dim    = "oklch(52% 0.014 30)"
   accent    = "oklch(50% 0.150 30)"
   match-bg  = "oklch(94% 0.045 30)"
   match-fg  = "oklch(32% 0.150 30)"
@@ -52,7 +54,7 @@ _merge = "deep"
   rule-soft = "oklch(28% 0.012 30)"
   fg        = "oklch(92% 0.014 30)"
   fg-mute   = "oklch(72% 0.014 30)"
-  fg-dim    = "oklch(55% 0.014 30)"
+  fg-dim    = "oklch(61% 0.014 30)"
   accent    = "oklch(75% 0.130 30)"
   match-bg  = "oklch(28% 0.080 30)"
   match-fg  = "oklch(88% 0.090 30)"
